@@ -1,4 +1,4 @@
- Current status (for v0.19):
+Current status (for v0.19):
 ########################
 # Current Capabilities #
 ########################
@@ -51,8 +51,6 @@ explore_stop = stairs,items
 ###############################
 # Generic Functions           #
 ###############################
-
-include = situation.rc
 
 {
 --sends input string as keys to Crawl, I wish I knew why three EoT chars were needed
@@ -107,17 +105,22 @@ function find(patterns, text)
     end
     return -1, -1
 end
+}
+#####################################
+# Determining Situation Functions   #
+#####################################
 
---#####################################
---# Determining Situation Functions   #
---#####################################
-
---moved to situation.rc
+# situation.rc functions:
+# is_harmless(mon): returns true if harmless (plant, etc.)
+# detect_monster_radius(rad, option): Find all monsters at an exact radius, option always "single" for now
+# detect_monsters(): wrapper for detect_monster_radius
+# find_closest_monster(): returns the x and y coordinate of the closest monster, using detect_mmonster_radius()
+include = situation.rc
 
 ----------------------
 -- Moving Functions --
 ----------------------
-
+{
 function autotravel()
   magic("o")
 end
