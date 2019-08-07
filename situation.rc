@@ -5,7 +5,6 @@
 ##                                    for now
 ##detect_monsters(): wrapper for detect_monster_radius
 ##find_closest_monster(): returns the x and y coordinate of the closest monster, using
-##detect_monster_radius
 <
 function find(patterns, text)
     local begin, final
